@@ -19,7 +19,9 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Run script
-        run: python your_script.py
+      - name: Run Python Script
         env:
-          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }} # Use GitHub Secrets for safety!
+          SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+          SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
+          RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
+        run: python main.py
